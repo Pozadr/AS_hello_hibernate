@@ -5,14 +5,19 @@ import javax.persistence.*;
 @Entity
 @Table(name = "sails")
 public class Sail {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Column(name = "sail_mark")
     private String mark;
+
     @Column(name = "sail_model")
     private String model;
+
     @Column(name = "sail_color")
+    @Enumerated(EnumType.ORDINAL)
     private Color color;
 
     public Sail() {
@@ -54,5 +59,15 @@ public class Sail {
 
     public void setColor(Color color) {
         this.color = color;
+    }
+
+    @Override
+    public String toString() {
+        return "Sail{" +
+                "id=" + id +
+                ", mark='" + mark + '\'' +
+                ", model='" + model + '\'' +
+                ", color=" + color +
+                '}';
     }
 }

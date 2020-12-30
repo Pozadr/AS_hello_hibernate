@@ -23,5 +23,14 @@ public class Start {
         Sail sailGoya = new Sail("Goya", "Banzai", Color.YELLOW);
         sailRepo.save(sailSimmer);
         sailRepo.save(sailGoya);
+
+        System.out.println("\nAll sails:");
+        sailRepo.findAll().forEach(System.out::println);
+
+        System.out.println("\nFind by Color:");
+        sailRepo.findByColor(Color.BLACK).forEach(System.out::println);
+
+        System.out.println("\nFind by Color and mark:");
+        sailRepo.findByColorAndMark(Color.BLACK, "Duotone").forEach(System.out::println);
     }
 }
