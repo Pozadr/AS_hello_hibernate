@@ -32,5 +32,8 @@ public class Start {
 
         System.out.println("\nFind by Color and mark:");
         sailRepo.findByColorAndMark(Color.BLACK, "Duotone").forEach(System.out::println);
+
+        System.out.println("\nFind by mark:");
+        sailRepo.findByMarkMyImpl("Severne").forEach(System.out::println);
     }
 }
